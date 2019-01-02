@@ -3,6 +3,7 @@
 
 Script feito em Python 3 que altera diretamente o IP e a porta do cliente 3d e remove a encryptação.
 
+Por enquanto, removendo encryption ( removing encryption only, maybe later make choose or no encryption )
 
 Modo de uso:
 
