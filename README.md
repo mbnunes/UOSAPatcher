@@ -10,8 +10,14 @@ Modo de uso:
   
       - WINDOWS
             
-            python UoSAPyPatcher.py 127.0.0.1 2593
+            python UoSAPyPatcher.py
             
       - LINUX
       
-            ./UoSAPyPatcher.py 127.0.0.1 2593
+            ./UoSAPyPatcher.py
+            
+
+<p align="center">
+  <img src="https://github.com/Mutilador/UOSAPatcher/blob/master/UOSAPatcher.png">
+</p>
+
