@@ -74,6 +74,7 @@ class Application(tkinter.Tk):
 		
 	def findPath(self):
 		filename =  askdirectory(title='Select UOSA folder')
+		self.pathEntry.delete(0, 'end')
 		self.pathEntry.insert(10,filename)
 
 	def sair(self):
