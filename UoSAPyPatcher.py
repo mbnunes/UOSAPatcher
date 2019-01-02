@@ -93,7 +93,7 @@ def injectClient(pathUOSA=None, address=None, portServer=0, encrypt=None, messag
 			fh.write(b'\x90')
 			fh.seek(0x023A76C)
 			fh.write(b'\x90')
-			message['text'] = "Client patched."
+			message['text'] = "Client patched. uosa-patched.exe created!"
 			
 	else:
 		message['text'] = "UOSA.exe não encontrado. Certifiquisse que o programa esteja rodando na mesma pasta do UOSA!"
