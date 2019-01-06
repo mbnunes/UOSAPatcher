@@ -42,6 +42,12 @@ class Application(tkinter.Tk):
 		self.loginEntry["font"] = ("Arial", "10")
 		self.loginEntry.grid(column=1, row=1, padx=5, pady=5)
 
+		self.encryptBoolVar = BooleanVar()
+		self.encryptBool = Checkbutton(text='Remove Encrypt', var=self.encryptBoolVar) 
+		self.encryptBool["width"] = 15
+		self.encryptBool["font"] = ("Arial", "10")
+		self.encryptBool.grid(column=1, row=3)
+
 		self.portServer = Label(text="Port:")
 		self.portServer["font"] = ("Arial", "10", "bold")
 		self.portServer.grid(column=0, row=2, padx=5, pady=5)
@@ -80,5 +86,5 @@ class Application(tkinter.Tk):
 	def sair(self):
 		sys.exit()
 
-	def injectPatcher(self):
-		injectClient(self.pathEntry.get(),self.loginEntry.get(), self.portEntry.get(),None,self.warningLabel)
+	def injectPatcher(self):		
+		injectClient(self.pathEntry.get(),self.loginEntry.get(), self.portEntry.get(),None,self.warningLabel,self.encryptBoolVar.get())

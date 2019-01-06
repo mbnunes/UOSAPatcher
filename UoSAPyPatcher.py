@@ -26,7 +26,7 @@ args = parser.parse_args()
 port = '{0:04x}'.format(args.port)
 port = re.findall('..',port)
 '''
-def injectClient(pathUOSA=None, address=None, portServer=0, encrypt=None, message=None):	
+def injectClient(pathUOSA=None, address=None, portServer=0, encrypt=None, message=None, removeEncrypt=False):	
 
 	pathUOSAOrigin = pathUOSA+'/UOSA.exe'
 	pathUOSAFinal = pathUOSA+'/uosa-patched.exe'
@@ -76,23 +76,25 @@ def injectClient(pathUOSA=None, address=None, portServer=0, encrypt=None, messag
 			fh.write(bytes.fromhex(port[0]))
 			message['text'] = "PORT added"
 			
-			message['text'] = "Removing encryption..."
-			fh.seek(0x023B07A)
-			fh.write(b'\x90')
-			fh.seek(0x023B07B)
-			fh.write(b'\x90')
-			
-			fh.seek(0x0238899)
-			fh.write(b'\x90')
-			fh.seek(0x023889A)
-			fh.write(b'\x90')
-			fh.seek(0x023889B)
-			fh.write(b'\x90')
-			
-			fh.seek(0x023A76B)
-			fh.write(b'\x90')
-			fh.seek(0x023A76C)
-			fh.write(b'\x90')
+			if removeEncrypt:
+				message['text'] = "Removing encryption..."
+				fh.seek(0x023B07A)
+				fh.write(b'\x90')
+				fh.seek(0x023B07B)
+				fh.write(b'\x90')
+				
+				fh.seek(0x0238899)
+				fh.write(b'\x90')
+				fh.seek(0x023889A)
+				fh.write(b'\x90')
+				fh.seek(0x023889B)
+				fh.write(b'\x90')
+				
+				fh.seek(0x023A76B)
+				fh.write(b'\x90')
+				fh.seek(0x023A76C)
+				fh.write(b'\x90')
+
 			message['text'] = "Client patched. uosa-patched.exe created!"
 			
 	else:
