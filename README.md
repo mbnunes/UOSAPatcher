@@ -8,7 +8,7 @@ Systems: ```Linux / Windows``` (MacOS not tested yet)
 
 ### This fork:
  * Now scans UOSA.exe for hex patterns, instead of writing to a specific address
- * Tested with 4.0.74.28 and 4.0.76.47
+ * Tested with 4.0.74.28 - 4.0.90.16
   
 ### Features:
  * Change server IP
