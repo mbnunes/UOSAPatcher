@@ -17,7 +17,7 @@ Systems: ```Linux / Windows``` (MacOS not tested yet)
 
 ### Hot to use?
  * Install python3 [(How to install python?)](https://realpython.com/installing-python)
- * Execute the tool from the command line ```python3 UoSAPatcher.py```
+ * Execute the tool from the command line ```python3 main.py```
  * Select the client folder path to UOSA.exe
  * Define the server information (ip/port)
  * Patch the client
