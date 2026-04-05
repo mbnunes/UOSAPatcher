@@ -71,16 +71,30 @@ def injectClient(pathUOSA=None, address=None, portServer=0, message=None, remove
 			message['text'] = "Adding IP address in client..."
 
 			# Find IP 1 - 107.23.85.115
-			i = search(m, prefix='0000', value='3130372E32332E38352E313135', suffix='000000')
+			i = search(m, prefix='00', value='3130372E32332E38352E313135', suffix='00')
 			if i > 0:
 				print('IP 1 found at: ' + hex(i))
 				fh.seek(i)
 				fh.write(addByteIP(address))
 
 			# Find IP 2 - 107.23.176.74
-			i = search(m, prefix='000000', value='3130372E32332E3137362E3734', suffix='000000')
+			i = search(m, prefix='00', value='3130372E32332E3137362E3734', suffix='00')
 			if i > 0:
 				print('IP 2 found at: ' + hex(i))
+				fh.seek(i)
+				fh.write(addByteIP(address))
+
+			# Find IP 3 - 75.2.70.184
+			i = search(m, prefix='00', value='37352E322E37302E313834', suffix='00')
+			if i > 0:
+				print('IP 3 found at: ' + hex(i))
+				fh.seek(i)
+				fh.write(addByteIP(address))
+			
+			# Find IP 4 - 13.248.219.129
+			i = search(m, prefix='00', value='31332E3234382E3231392E313239', suffix='00')
+			if i > 0:
+				print('IP 4 found at: ' + hex(i))
 				fh.seek(i)
 				fh.write(addByteIP(address))
 
@@ -132,7 +146,7 @@ def injectClient(pathUOSA=None, address=None, portServer=0, message=None, remove
 					fh.seek(i)
 					fh.write(b'\x90')
 					fh.seek(i+1)
-					fh.write(b'\x90')
+					fh.write(b'\x90') 
 					fh.seek(i+2)
 					fh.write(b'\x90')
 

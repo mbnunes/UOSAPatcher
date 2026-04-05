@@ -2,13 +2,13 @@
 
 UOSAPatcher is an Open Source tool, build in Python 3 to change Ultima Online SA client:
 
-Last tested client: ```4.0.76.47```
+Last tested client: ```4.0.114.1```
 
 Systems: ```Linux / Windows``` (MacOS not tested yet)
 
 ### This fork:
  * Now scans UOSA.exe for hex patterns, instead of writing to a specific address
- * Tested with 4.0.74.28 - 4.0.90.16
+ * Tested with 4.0.74.28 - 4.0.114.1
   
 ### Features:
  * Change server IP
